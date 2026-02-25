@@ -1,14 +1,14 @@
 import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
-// import { Skeleton } from "@/components/ui/skeleton";
+import { Skeleton } from "@/components/ui/skeleton";
 import { api } from "@/convex/_generated/api";
 import { fetchQuery } from "convex/nextjs";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-// import { Suspense } from "react";
 import { cacheLife, cacheTag } from "next/cache";
 import { connection } from "next/server";
+import { Suspense } from "react";
 
 // export const dynamic = "force-static";
 // 'auto' | 'force-dynamic' | 'error' | 'force-static'
@@ -35,9 +35,9 @@ export default function BlogPage() {
         </p>
       </div>
 
-      {/* <Suspense fallback={<SkeletonLoadingUi />}> */}
-      <LoadBlogList />
-      {/* </Suspense> */}
+      <Suspense fallback={<SkeletonLoadingUi />}>
+        <LoadBlogList />
+      </Suspense>
     </div>
   );
 }
