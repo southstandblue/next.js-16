@@ -15,6 +15,11 @@ const nextConfig: NextConfig = {
         protocol: "https",
         port: "",
       },
+      {
+        hostname: "nautical-salmon-681.eu-west-1.convex.cloud",
+        protocol: "https",
+        port: "",
+      },
     ],
   },
 };
